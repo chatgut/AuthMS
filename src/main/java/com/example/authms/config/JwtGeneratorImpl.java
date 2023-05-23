@@ -27,10 +27,10 @@ public class JwtGeneratorImpl implements JwtGeneratorInterface {
     @Override
     public Map<String, String> generateToken(User user) {
         String jwtToken="";
-        jwtToken = Jwts.builder().setSubject(user.getUsername()).
-                setIssuedAt(new Date()).
-                signWith(getSigningKey()).
-                compact();
+        jwtToken = Jwts.builder().setSubject(user.getUsername())
+                .setIssuedAt(new Date())
+                .signWith(getSigningKey())
+                .compact();
         Map<String, String> jwtTokenGen = new HashMap<>();
         jwtTokenGen.put("token", jwtToken);
         jwtTokenGen.put("message", message);
