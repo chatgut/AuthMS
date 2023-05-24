@@ -1,0 +1,26 @@
+version: '3'
+services:
+  auth-ms:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    environment:
+      - spring_datasource_url=jdbc:mysql://mysql-container:3306/authms
+      - spring_datasource_username=root
+      - spring_datasource_password=password
+      - jwt_secret=26462948404D635166546A576E5A7234753778214125442A472D4B614E645267
+      - app_jwttoken_message=Login Successful
+    depends_on:
+      - mysql-container
+
+  mysql-container:
+    image: ghcr.io/chatgut/authms:latest
+    ports:
+      - 3307:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=authms
+
+
