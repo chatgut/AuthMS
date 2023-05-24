@@ -1,5 +1,5 @@
 # Project Name
-    Auth Microservices
+    Auth Microservices  
 # Description
     Auth Mocroservices that manages user credentials and distributes JSON Web Tokens. It is built using Java springboot, MySQL database and Rest APIs.
 ## Getting started
