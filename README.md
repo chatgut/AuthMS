@@ -14,7 +14,7 @@
 
         POST /api/v1/user/register
 
-    - Login Account / Generate Token
+    - Login Account / Generate Token 
 
         POST /api/v1/user/login
 
