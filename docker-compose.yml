@@ -1,9 +1,7 @@
 version: '3'
 services:
   auth-ms:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: ghcr.io/chatgut/authms:latest
     ports:
       - 8080:8080
     environment:
@@ -16,9 +14,7 @@ services:
       - mysql-container
 
   mysql-container:
-    image: ghcr.io/chatgut/authms:latest
-    ports:
-      - 3307:3306
+    image: mysql:latest
     environment:
       - MYSQL_ROOT_PASSWORD=password
       - MYSQL_DATABASE=authms
