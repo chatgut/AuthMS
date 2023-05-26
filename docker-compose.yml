@@ -1,7 +1,9 @@
 version: '3'
 services:
   auth-ms:
-    image: ghcr.io/chatgut/authms:main
+    build:
+      context: .
+   # image: ghcr.io/chatgut/authms:main
     ports:
       - 8003:8080
     environment:
